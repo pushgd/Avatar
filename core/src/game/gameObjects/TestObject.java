@@ -1,15 +1,14 @@
-package game;
+package game.gameObjects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.Scene;
+import com.libGDX.engine.Base.GameObject;
 
 /**
- * Created by Dhande on 26-02-2017.
+ * Created by Dhande on 01-03-2017.
  */
 
-public class SceneMenu extends Scene
+public class TestObject extends GameObject
 {
-
     @Override
     public void update()
     {
@@ -21,8 +20,4 @@ public class SceneMenu extends Scene
     {
 
     }
-
-
-
-
 }

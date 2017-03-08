@@ -19,7 +19,7 @@ public class Utility
 
     public static float getDistanceeBetweenTwoPoints(float x1, float y1, float x2, float y2)
     {
-        return (float) Math.sqrt(getDistanceeBetweenTwoPoints(x1, y1, x2, y2));
+        return (float) Math.sqrt(getSquaredDistanceBetweenTwoPoints(x1, y1, x2, y2));
     }
 
 

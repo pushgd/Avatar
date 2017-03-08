@@ -1,6 +1,5 @@
 package com.libGDX.engine.Base;
 
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.libGDX.engine.Debug.Debug;
 
@@ -14,14 +13,14 @@ public abstract class Scene
 
     abstract public void update();
 
+    abstract public void pause();
+
     abstract public void paint(SpriteBatch spriteBatch);
 
     public void onExit()
     {
         Debug.print("Exiting scene with id " + ID);
     }
-
-
 
 
     public boolean keyDown(int keycode)
@@ -70,22 +69,6 @@ public abstract class Scene
     {
         return false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
