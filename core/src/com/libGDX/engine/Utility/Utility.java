@@ -1,6 +1,6 @@
 package com.libGDX.engine.Utility;
 
-import com.libGDX.engine.Base.Point;
+import com.libGDX.engine.Base.Vector2D;
 
 /**
  * Created by Dhande on 27-02-2017.
@@ -10,7 +10,7 @@ public class Utility
 {
 
 
-    public static float getDistanceBetweenPoints(Point p1, Point p2)
+    public static float getDistanceBetweenPoints(Vector2D p1, Vector2D p2)
     {
 
         return getDistanceeBetweenTwoPoints(p1.x, p1.y, p2.x, p2.y);
@@ -23,7 +23,7 @@ public class Utility
     }
 
 
-    public static float getSquaredDistanceBetweenTwoPoints(Point p1, Point p2)
+    public static float getSquaredDistanceBetweenTwoPoints(Vector2D p1, Vector2D p2)
     {
 
         return getSquaredDistanceBetweenTwoPoints(p1.x, p1.y, p2.x, p2.y);

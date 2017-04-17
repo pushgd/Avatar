@@ -6,8 +6,6 @@ package com.libGDX.engine.Base;
 
 public abstract class GameObject extends Entity
 {
-
-
-
+    public Animation animation;
 
 }

@@ -1,10 +1,8 @@
 package game;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.Renderer;
+import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Scene;
-import com.libGDX.engine.Debug.Debug;
 
 
 /**
@@ -37,49 +35,75 @@ public class GameManager
 
     public static void update()
     {
-        currentScene.update();
+        if (currentScene != null)
+        {
+            currentScene.update();
+        }
 //        Debug.print("Update");
     }
 
     static int angle = 0;
+    static float scale = 1;
+    static int direction = 1;
 
     public static void paint(SpriteBatch spriteBatch)
     {
-        Renderer.drawLine(spriteBatch,400,240,800,480, 3,new Color(255/255f,100/255f,0,255));
-        currentScene.paint(spriteBatch);
+
+        if (currentScene != null)
+        {
+            currentScene.paint(spriteBatch);
+        }
 
     }
 
 
     public static void keyDown(int keyCode)
     {
-        currentScene.keyDown(keyCode);
+        if (currentScene != null)
+        {
+            currentScene.keyDown(keyCode);
+        }
     }
 
     public static void keyUp(int keyCode)
     {
-        currentScene.keyUp(keyCode);
+
+        if (currentScene != null)
+        {
+            currentScene.keyUp(keyCode);
+        }
     }
 
     public static void touchDown(int x, int y, int pointerId, int mouseButton)
     {
-        currentScene.touchDown(x, y, pointerId, mouseButton);
+        if (currentScene != null)
+        {
+            currentScene.touchDown(x, y, pointerId, mouseButton);
+        }
     }
 
     public static void touchUp(int x, int y, int pointerId, int mouseButton)
     {
-        currentScene.touchUp(x, y, pointerId, mouseButton);
+        if (currentScene != null)
+        {
+            currentScene.touchUp(x, y, pointerId, mouseButton);
+        }
     }
 
     public static void touchDragged(int x, int y, int pointerId)
     {
-
-        currentScene.touchDragged(x, y, pointerId);
+        if (currentScene != null)
+        {
+            currentScene.touchDragged(x, y, pointerId);
+        }
     }
 
     public static void onPause()
     {
-        currentScene.pause();
+        if (currentScene != null)
+        {
+            currentScene.pause();
+        }
     }
 
 }

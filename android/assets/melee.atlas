@@ -1,0 +1,62 @@
+
+melee.png
+size: 1024,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+1
+  rotate: false
+  xy: 208, 5
+  size: 145, 234
+  orig: 284, 278
+  offset: 56, 17
+  index: -1
+2
+  rotate: false
+  xy: 355, 2
+  size: 176, 212
+  orig: 284, 278
+  offset: 63, 18
+  index: -1
+3
+  rotate: false
+  xy: 240, 248
+  size: 207, 223
+  orig: 284, 278
+  offset: 63, 18
+  index: -1
+4
+  rotate: false
+  xy: 2, 241
+  size: 236, 230
+  orig: 284, 278
+  offset: 42, 18
+  index: -1
+5
+  rotate: false
+  xy: 2, 7
+  size: 204, 232
+  orig: 284, 278
+  offset: 33, 18
+  index: -1
+6
+  rotate: false
+  xy: 449, 216
+  size: 169, 255
+  orig: 284, 278
+  offset: 25, 18
+  index: -1
+7
+  rotate: false
+  xy: 790, 241
+  size: 160, 230
+  orig: 284, 278
+  offset: 34, 18
+  index: -1
+8
+  rotate: false
+  xy: 620, 235
+  size: 168, 236
+  orig: 284, 278
+  offset: 58, 15
+  index: -1

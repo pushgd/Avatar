@@ -1,0 +1,69 @@
+
+runshoot.png
+size: 2048,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+1
+  rotate: false
+  xy: 1074, 2
+  size: 340, 483
+  orig: 567, 556
+  offset: 147, 19
+  index: -1
+2
+  rotate: false
+  xy: 797, 487
+  size: 362, 492
+  orig: 567, 556
+  offset: 121, 10
+  index: -1
+3
+  rotate: false
+  xy: 1520, 516
+  size: 367, 463
+  orig: 567, 556
+  offset: 112, 38
+  index: -1
+4
+  rotate: false
+  xy: 403, 505
+  size: 392, 474
+  orig: 567, 556
+  offset: 96, 28
+  index: -1
+5
+  rotate: false
+  xy: 377, 28
+  size: 353, 475
+  orig: 567, 556
+  offset: 134, 27
+  index: -1
+6
+  rotate: false
+  xy: 2, 12
+  size: 373, 495
+  orig: 567, 556
+  offset: 109, 7
+  index: -1
+7
+  rotate: false
+  xy: 2, 509
+  size: 399, 470
+  orig: 567, 556
+  offset: 78, 31
+  index: -1
+8
+  rotate: false
+  xy: 1161, 502
+  size: 357, 477
+  orig: 567, 556
+  offset: 129, 25
+  index: -1
+9
+  rotate: false
+  xy: 732, 17
+  size: 340, 468
+  orig: 567, 556
+  offset: 127, 35
+  index: -1
