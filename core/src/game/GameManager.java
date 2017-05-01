@@ -1,5 +1,6 @@
 package game;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Scene;
@@ -16,6 +17,7 @@ public class GameManager
 
     public static void onGameStart()
     {
+        CollisionManager.init();
         currentScene = new game.scenes.SceneMenu();
     }
 
@@ -39,6 +41,7 @@ public class GameManager
         {
             currentScene.update();
         }
+        CollisionManager.detectCollision();
 //        Debug.print("Update");
     }
 
@@ -49,11 +52,12 @@ public class GameManager
     public static void paint(SpriteBatch spriteBatch)
     {
 
+
         if (currentScene != null)
         {
             currentScene.paint(spriteBatch);
         }
-
+        Image.Debug.drawText(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 480);
     }
 
 
@@ -95,6 +99,14 @@ public class GameManager
         if (currentScene != null)
         {
             currentScene.touchDragged(x, y, pointerId);
+        }
+    }
+
+    public static void mouseMoved(int x, int y)
+    {
+        if (currentScene != null)
+        {
+            currentScene.mouseMoved(x, 480 - y);
         }
     }
 

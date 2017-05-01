@@ -115,6 +115,7 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     @Override
     public boolean mouseMoved(int screenX, int screenY)
     {
+        GameManager.mouseMoved(screenX,screenY);
         return false;
     }
 

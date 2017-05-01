@@ -11,13 +11,11 @@ import java.util.ArrayList;
 
 public class GameObjectManager
 {
-
     ArrayList<GameObject> gameObjectList;
 
     private GameObjectManager()
     {
 
-        // checking commit .......ajay
 
     }
 
