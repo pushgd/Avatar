@@ -74,6 +74,12 @@ public class Collision
 
     public boolean isColliding(Collision other)
     {
-        return worldRect.left <= other.worldRect.right && worldRect.right >= other.worldRect.left && worldRect.top >= other.worldRect.bottom && worldRect.bottom <= other.worldRect.top;
+        return worldRect.left <= other.worldRect.right && worldRect.right >= other.worldRect.left && worldRect.top <= other.worldRect.bottom && worldRect.bottom >= other.worldRect.top;
+    }
+
+    @Override
+    public String toString()
+    {
+        return " collision {"+ID+" Owner "+owner.UID+" }";
     }
 }

@@ -3,29 +3,49 @@ package com.libGDX.engine.Base;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMap;
+import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
+import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.utils.TimeUtils;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 import game.GameManager;
 
 public class MainGameLoop extends ApplicationAdapter implements InputProcessor
 {
     public static final float MS_FOR_EACH_FRAME = 1000f / 60;
+    public static final int VIEWPORT_WIDTH = 1280;
+    public static final int VIEWPORT_HEIGHT = 720;
     SpriteBatch spriteBatch;
     double previous = TimeUtils.millis();
     double lag = 0.0;
+    public OrthographicCamera camera;
+    Viewport viewport;
+    public TiledMap tiledMap;
+    public TiledMapRenderer tiledMapRenderer;
 
     @Override
     public void create()
     {
 
-
+        camera = new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT);
+        camera.setToOrtho(true);
+        camera.position.set(VIEWPORT_WIDTH / 2, VIEWPORT_HEIGHT / 2, 0);
+        viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, camera);
+        camera.update();
         spriteBatch = new SpriteBatch();
         Gdx.input.setInputProcessor(this);
         GameManager.onGameStart();
+        tiledMap = new TmxMapLoader().load("test.tmx");
+        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+    tiledMap.getLayers().get(1).setVisible(true);
 
     }
 
@@ -47,11 +67,13 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
             GameManager.update();
             lag -= MS_FOR_EACH_FRAME;
         }
-
+        spriteBatch.setProjectionMatrix(camera.combined);
         spriteBatch.begin();
+        tiledMapRenderer.setView(camera);
+//        tiledMapRenderer.render(new int[]{0});
         GameManager.paint(spriteBatch);
+//        tiledMapRenderer.render(new int[]{1});
         spriteBatch.end();
-
 
     }
 
@@ -73,6 +95,26 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     @Override
     public boolean keyDown(int keycode)
     {
+
+
+        if (keycode == Input.Keys.LEFT)
+        {
+            camera.translate(-32, 0);
+        }
+        if (keycode == Input.Keys.RIGHT)
+        {
+            camera.translate(32, 0);
+        }
+        if (keycode == Input.Keys.UP)
+        {
+            camera.translate(0, -32);
+        }
+        if (keycode == Input.Keys.DOWN)
+        {
+            camera.translate(0, 32);
+        }
+
+
         GameManager.keyDown(keycode);
         return false;
     }
@@ -115,7 +157,7 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     @Override
     public boolean mouseMoved(int screenX, int screenY)
     {
-        GameManager.mouseMoved(screenX,screenY);
+        GameManager.mouseMoved(screenX, screenY);
         return false;
     }
 
@@ -131,5 +173,15 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
         super.pause();
         GameManager.onPause();
         Debug("Paused");
+    }
+
+    @Override
+    public void resize(int width, int height)
+    {
+//        camera.viewportWidth = width;
+//        camera.viewportHeight = height;
+//        camera.update();
+        viewport.update(width, height);
+
     }
 }

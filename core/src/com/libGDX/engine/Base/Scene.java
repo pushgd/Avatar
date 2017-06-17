@@ -23,9 +23,9 @@ public abstract class Scene
     }
 
 
-    public boolean keyDown(int keycode)
+    public void keyDown(int keycode)
     {
-        return false;
+
     }
 
 

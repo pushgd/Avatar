@@ -1,7 +1,7 @@
 package game;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Scene;
 
@@ -18,6 +18,7 @@ public class GameManager
     public static void onGameStart()
     {
         CollisionManager.init();
+        Image.Debug.init();
         currentScene = new game.scenes.SceneMenu();
     }
 
@@ -57,7 +58,7 @@ public class GameManager
         {
             currentScene.paint(spriteBatch);
         }
-        Image.Debug.drawText(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 480);
+//        Image.Debug.drawText(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 480);
     }
 
 
@@ -106,7 +107,7 @@ public class GameManager
     {
         if (currentScene != null)
         {
-            currentScene.mouseMoved(x, 480 - y);
+            currentScene.mouseMoved(x, y);
         }
     }
 

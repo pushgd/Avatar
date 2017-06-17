@@ -3,7 +3,9 @@ package game.gameObjects;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.libGDX.engine.Base.Collision;
 import com.libGDX.engine.Base.GameObject;
+import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Vector2D;
+import com.libGDX.engine.Debug.Debug;
 
 import game.CollisionManager;
 
@@ -38,7 +40,7 @@ public class TestGameObject2 extends GameObject
     @Override
     public void onCollision(Collision collision,Collision otherCollision)
     {
-
+        Debug.print( ""+otherCollision);
     }
 
     @Override

@@ -48,6 +48,7 @@ public class Animation
         {
             Sprite t = new Sprite(atlas.findRegion((i + 1) + ""));
             temp[i] = t;
+            t.flip(false,true);
             frameTime[i] = timeMS / size;
         }
         sprites.add(temp);
@@ -106,7 +107,9 @@ public class Animation
     public void paint(SpriteBatch spriteBatch, float x, float y)
     {
         Sprite temp = sprites.get(currentState)[currentFrame];
+        temp.setOrigin(0,0);
         temp.setPosition(x, y);
+
         temp.draw(spriteBatch);
     }
 

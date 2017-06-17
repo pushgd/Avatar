@@ -59,14 +59,20 @@ public class Image
     {
         public static Texture pixel = new Texture("pixel.png");
         public static Sprite pixelSprite = new Sprite(pixel);
-        public static BitmapFont bf = new BitmapFont();
+        public static BitmapFont bf = new BitmapFont(true);
         public static GlyphLayout gl = new GlyphLayout();
+
+        public static void init()
+        {
+            pixelSprite.flip(false, true);
+        }
 
 
         public static void drawLine(SpriteBatch spritebatch, float x1, float y1, float x2, float y2, int height)
         {
             float angle = ((float) Math.toDegrees(Math.atan2((y1 - y2), (x1 - x2)))) - 180;
             float length = Utility.getDistanceeBetweenTwoPoints(x1, y1, x2, y2);
+
             pixelSprite.setSize(length, height);
             pixelSprite.setOrigin(0, 0);
             pixelSprite.setRotation(angle);
@@ -115,6 +121,7 @@ public class Image
         {
             bf.setColor(c);
             bf.draw(spriteBatch, s, x, y);
+
 
         }
 

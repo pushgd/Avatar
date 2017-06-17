@@ -1,10 +1,12 @@
 package game.scenes;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Scene;
 import com.libGDX.engine.Debug.Debug;
 
@@ -47,9 +49,32 @@ FPSLogger fps;
     @Override
     public void paint(SpriteBatch spriteBatch)
     {
+        Image.Debug.drawText(spriteBatch,"FPS " + Gdx.graphics.getFramesPerSecond(),0,0);
+//        bf.draw(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 0);
         go.paintEntity(spriteBatch);
         go2.paint(spriteBatch);
-        bf.draw(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 480);
+
+    }
+
+    @Override
+    public void keyDown(int keycode)
+    {
+        if(keycode== Input.Keys.RIGHT)
+        {
+            go.position.x+=5;
+        }
+        if(keycode == Input.Keys.LEFT)
+        {
+            go.position.x-=5;
+        }
+        if(keycode== Input.Keys.UP)
+        {
+            go.position.y-=5;
+        }
+        if(keycode == Input.Keys.DOWN)
+        {
+            go.position.y+=5;
+        }
     }
 
     @Override

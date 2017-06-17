@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.libGDX.engine.Base.Animation;
 import com.libGDX.engine.Base.Collision;
 import com.libGDX.engine.Base.GameObject;
+import com.libGDX.engine.Base.Image;
 import com.libGDX.engine.Base.Vector2D;
 import com.libGDX.engine.Debug.Debug;
 
@@ -26,7 +27,7 @@ public class TestObject extends GameObject
         animation.addAnimation(new TextureAtlas("walk.atlas"), 700);
         animation.addAnimation(new TextureAtlas("melee.atlas"), 700);
         animation.setState(0, 1, true);
-        position = new Vector2D(400, 0);
+        position = new Vector2D(100, 100);
         collision = new Collision(this, 0, 0, 40, 40);
         collision.type = 1;
         collision2 = new Collision(this, animation.getWidth() , animation.getHeight() / 2, 40, 40);
@@ -40,9 +41,10 @@ public class TestObject extends GameObject
     public void update()
     {
 //        Debug.print("width " + animation.getWidth());
+//        position.x++;
         animation.update();
         collision.update(collision.position.x, collision.position.y, animation.getWidth(), animation.getHeight());
-        collision2.update(collision2.position.x, collision2.position.y, animation.getWidth() / 2, animation.getHeight() / 2);
+        collision2.update(animation.getWidth(), collision2.position.y, animation.getWidth() / 2, animation.getHeight() / 2);
 
     }
 
@@ -50,6 +52,7 @@ public class TestObject extends GameObject
     public void paint(SpriteBatch spriteBatch)
     {
         animation.paint(spriteBatch, position.x, position.y);
+        Image.Debug.drawText(spriteBatch,position+"  "+animation.getHeight(),position.x,position.y);
         collision.paint(spriteBatch);
         collision2.paint(spriteBatch, Color.PINK);
     }
