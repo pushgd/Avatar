@@ -44,7 +44,7 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
         Gdx.input.setInputProcessor(this);
         GameManager.onGameStart();
         tiledMap = new TmxMapLoader().load("test.tmx");
-        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap);
+        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap,spriteBatch);
     tiledMap.getLayers().get(1).setVisible(true);
 
     }
@@ -67,13 +67,19 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
             GameManager.update();
             lag -= MS_FOR_EACH_FRAME;
         }
+
+
+
         spriteBatch.setProjectionMatrix(camera.combined);
-        spriteBatch.begin();
         tiledMapRenderer.setView(camera);
-//        tiledMapRenderer.render(new int[]{0});
+
+
+        tiledMapRenderer.render(new int[]{0});
+        spriteBatch.begin();
         GameManager.paint(spriteBatch);
-//        tiledMapRenderer.render(new int[]{1});
         spriteBatch.end();
+        tiledMapRenderer.render(new int[]{1});
+
 
     }
 
@@ -99,19 +105,22 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
 
         if (keycode == Input.Keys.LEFT)
         {
-            camera.translate(-32, 0);
+            camera.translate(32, 0);
         }
         if (keycode == Input.Keys.RIGHT)
         {
-            camera.translate(32, 0);
+            camera.translate(-32, 0);
+
         }
         if (keycode == Input.Keys.UP)
         {
-            camera.translate(0, -32);
+            camera.translate(0, 32);
         }
         if (keycode == Input.Keys.DOWN)
         {
-            camera.translate(0, 32);
+
+            camera.translate(0, -32);
+
         }
 
 
@@ -178,9 +187,9 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     @Override
     public void resize(int width, int height)
     {
-//        camera.viewportWidth = width;
-//        camera.viewportHeight = height;
-//        camera.update();
+       camera.viewportWidth = width;
+        camera.viewportHeight = height;
+        camera.update();
         viewport.update(width, height);
 
     }
