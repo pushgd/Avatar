@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" tiledversion="1.0.1" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="21">
  <tileset firstgid="1" name="tileSet" tilewidth="32" tileheight="32" tilecount="256" columns="16">
   <image source="tileSet.png" width="512" height="512"/>
  </tileset>
@@ -107,6 +107,36 @@
 95,95,79,80,80,80,95,96,80,96,96,79,80,80,80,80,95,95,96,96,96,79,80,79,95,96,95,95,96,79,80,96,95,96,95,96,79,79,79,95,96,96,96,95,95,96,96,79,79,79,95,79,79,79,79,79,79,95,96,96,96,95,79,79,95,95,96,95,95,96,0,0,95,96,80,96,95,96,80,80,96,96,0,79,95,95,95,96,96,0,0,0,79,80,95,95,96,96,0,0
 </data>
  </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="1" x="784" y="372" width="416" height="288"/>
+  <object id="2" x="1460" y="300" width="204" height="236">
+   <ellipse/>
+  </object>
+  <object id="4" x="1128" y="932">
+   <polyline points="0,0 388,540 184,156 820,12 -8,-4 12,-8"/>
+  </object>
+  <object id="5" gid="81" x="2396" y="748" width="32" height="32"/>
+  <object id="6" gid="70" x="2400" y="744" width="32" height="32"/>
+  <object id="7" gid="70" x="2472" y="916" width="32" height="32"/>
+  <object id="8" gid="70" x="304" y="1696" width="664" height="752"/>
+  <object id="9" x="2434.5" y="534.5" width="83" height="19">
+   <text wrap="1">Hello World</text>
+  </object>
+  <object id="11" x="1234.5" y="1118.5" width="83" height="19">
+   <text wrap="1">Hello World</text>
+  </object>
+  <object id="12" x="1394.5" y="242.5" width="279" height="163">
+   <text wrap="1">Hello World</text>
+  </object>
+  <object id="13" x="932" y="1596"/>
+  <object id="14" x="816" y="1484"/>
+  <object id="15" x="368" y="1480"/>
+  <object id="16" x="884" y="1168"/>
+  <object id="17" x="832" y="1104"/>
+  <object id="18" x="636" y="1168"/>
+  <object id="19" x="516" y="1176"/>
+  <object id="20" x="-148" y="240"/>
+ </objectgroup>
  <layer name="Tile Layer 1" width="100" height="100">
   <data encoding="csv">
 0,0,123,121,0,0,0,0,0,0,121,0,0,0,0,0,121,121,121,121,121,0,0,0,0,121,0,0,121,121,121,121,121,121,121,0,0,0,0,0,0,0,0,0,121,121,121,121,121,121,121,121,121,121,121,121,121,121,0,0,0,0,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,121,
