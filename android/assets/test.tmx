@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" name="tileSet" tilewidth="32" tileheight="32" tilecount="256" columns="16">
-  <image source="C:/Users/Dhande/Pictures/tileSet.png" width="512" height="512"/>
+  <image source="tileSet.png" width="512" height="512"/>
  </tileset>
  <layer name="Tile Layer 1" width="100" height="100">
   <data encoding="csv">

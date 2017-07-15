@@ -3,12 +3,11 @@ package game.gameObjects;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.libGDX.engine.Base.Animation;
-import com.libGDX.engine.Base.Collision;
-import com.libGDX.engine.Base.GameObject;
-import com.libGDX.engine.Base.Image;
-import com.libGDX.engine.Base.Vector2D;
-import com.libGDX.engine.Debug.Debug;
+import com.libGDX.engine.Base.aniamtion.SpriteAnimation;
+import com.libGDX.engine.Base.collision.Collision;
+import com.libGDX.engine.Base.gameComponents.GameObject;
+import com.libGDX.engine.Base.render.Image;
+import com.libGDX.engine.Utility.Vector2D;
 
 import game.CollisionManager;
 
@@ -23,7 +22,7 @@ public class TestObject extends GameObject
 
     public TestObject()
     {
-        animation = new Animation(this);
+        animation = new SpriteAnimation(this);
         animation.addAnimation(new TextureAtlas("walk.atlas"), 700);
         animation.addAnimation(new TextureAtlas("melee.atlas"), 700);
         animation.setState(0, 1, true);
@@ -79,6 +78,12 @@ public class TestObject extends GameObject
 
     @Override
     public void onAnimationCycleComplete(int animationID, int completedState, int noOfCyclesRemaining)
+    {
+
+    }
+
+    @Override
+    public void onAnimationEvent(float eventNumber, float animationState)
     {
 
     }

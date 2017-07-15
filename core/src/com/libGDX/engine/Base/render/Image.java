@@ -1,4 +1,4 @@
-package com.libGDX.engine.Base;
+package com.libGDX.engine.Base.render;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

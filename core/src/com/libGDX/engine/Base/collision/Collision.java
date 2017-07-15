@@ -1,7 +1,9 @@
-package com.libGDX.engine.Base;
+package com.libGDX.engine.Base.collision;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.libGDX.engine.Base.gameComponents.Entity;
+import com.libGDX.engine.Utility.Vector2D;
 import com.libGDX.engine.Utility.Rectangle;
 
 /**

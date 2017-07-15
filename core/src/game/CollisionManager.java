@@ -1,8 +1,6 @@
 package game;
 
-import com.libGDX.engine.Base.Collision;
-import com.libGDX.engine.Base.Image;
-import com.libGDX.engine.Debug.Debug;
+import com.libGDX.engine.Base.collision.Collision;
 
 import java.util.ArrayList;
 

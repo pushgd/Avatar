@@ -1,4 +1,4 @@
-package com.libGDX.engine.Base;
+package com.libGDX.engine.Base.aniamtion;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,31 +11,23 @@ import java.util.ArrayList;
  * Created by Dhande on 20-03-2017.
  */
 
-public class Animation
+public class SpriteAnimation extends Animation
 {
     ArrayList<int[]> time;
     ArrayList<Sprite[]> sprites;
-    int currentFrame, currentState, cyclesToComplete;
-    private int animationID;
+    int currentFrame;
     long previousTime;
-    AnimationEventListener listener;
 
-    public Animation(AnimationEventListener listener)
+    public SpriteAnimation(com.libGDX.engine.Base.aniamtion.AnimationEventListener listener)
     {
-        time = new ArrayList<int[]>();
-        sprites = new ArrayList<Sprite[]>();
-        this.listener = listener;
-        cyclesToComplete = 1;
-        animationID = 1;
+        this(1, listener);
     }
 
-    public Animation(int animationID, AnimationEventListener listener)
+    public SpriteAnimation(int animationID, com.libGDX.engine.Base.aniamtion.AnimationEventListener listener)
     {
+        super(animationID, listener);
         time = new ArrayList<int[]>();
         sprites = new ArrayList<Sprite[]>();
-        this.listener = listener;
-        cyclesToComplete = 1;
-        this.animationID = animationID;
     }
 
 
@@ -48,7 +40,7 @@ public class Animation
         {
             Sprite t = new Sprite(atlas.findRegion((i + 1) + ""));
             temp[i] = t;
-            t.flip(false,true);
+            t.flip(false, true);
             frameTime[i] = timeMS / size;
         }
         sprites.add(temp);
@@ -56,6 +48,7 @@ public class Animation
 
     }
 
+    @Override
     public void update()
     {
 
@@ -78,10 +71,10 @@ public class Animation
                 currentFrame = sprites.get(currentState).length - 1;
                 cyclesToComplete--;
                 currentFrame = 0;
-                listener.onAnimationCycleComplete(animationID,currentState,cyclesToComplete);
+                listener.onAnimationCycleComplete(animationID, currentState, cyclesToComplete);
                 if (cyclesToComplete == 0)
                 {
-                    listener.onAnimationStateComplete(animationID,currentState);
+                    listener.onAnimationStateComplete(animationID, currentState);
                 }
 
 
@@ -92,6 +85,7 @@ public class Animation
 
     }
 
+    @Override
     public void setState(int stateToState, int cycles, boolean force)
     {
         if (force || currentState != stateToState)
@@ -104,20 +98,23 @@ public class Animation
 
     }
 
+    @Override
     public void paint(SpriteBatch spriteBatch, float x, float y)
     {
         Sprite temp = sprites.get(currentState)[currentFrame];
-        temp.setOrigin(0,0);
+        temp.setOrigin(0, 0);
         temp.setPosition(x, y);
 
         temp.draw(spriteBatch);
     }
 
+    @Override
     public float getWidth()
     {
         return sprites.get(currentState)[currentFrame].getWidth();
     }
 
+    @Override
     public float getHeight()
     {
         return sprites.get(currentState)[currentFrame].getHeight();

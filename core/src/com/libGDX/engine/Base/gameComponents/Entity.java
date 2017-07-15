@@ -1,4 +1,4 @@
-package com.libGDX.engine.Base;
+package com.libGDX.engine.Base.gameComponents;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -6,15 +6,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * Created by Dhande on 27-02-2017.
  */
 
-public abstract class Entity implements AnimationEventListener
+public abstract class Entity implements com.libGDX.engine.Base.aniamtion.AnimationEventListener
 {
 
     private static int baseId = 0;
 
     public int ID;
     public final int UID;
-    public Vector2D position;
-    public Vector2D velocity;
+    public com.libGDX.engine.Utility.Vector2D position;
+    public com.libGDX.engine.Utility.Vector2D velocity;
 
     public Entity()
     {
@@ -36,8 +36,7 @@ public abstract class Entity implements AnimationEventListener
 
     public abstract void paint(SpriteBatch spriteBatch);
 
-    public abstract void onCollision(Collision collision,Collision otherCollision);
-
+    public abstract void onCollision(collision.Collision collision, collision.Collision otherCollision);
 
 
 }

@@ -1,10 +1,9 @@
 package game.gameObjects;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.Collision;
-import com.libGDX.engine.Base.GameObject;
-import com.libGDX.engine.Base.Image;
-import com.libGDX.engine.Base.Vector2D;
+import com.libGDX.engine.Base.collision.Collision;
+import com.libGDX.engine.Base.gameComponents.GameObject;
+import com.libGDX.engine.Utility.Vector2D;
 import com.libGDX.engine.Debug.Debug;
 
 import game.CollisionManager;
@@ -51,6 +50,12 @@ public class TestGameObject2 extends GameObject
 
     @Override
     public void onAnimationCycleComplete(int animationID, int completedState, int noOfCyclesRemaining)
+    {
+
+    }
+
+    @Override
+    public void onAnimationEvent(float eventNumber, float animationState)
     {
 
     }

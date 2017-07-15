@@ -1,4 +1,4 @@
-package com.libGDX.engine.Base;
+package com.libGDX.engine.Base.gameComponents;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.libGDX.engine.Debug.Debug;

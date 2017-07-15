@@ -1,7 +1,5 @@
 package com.libGDX.engine.Utility;
 
-import com.libGDX.engine.Base.Vector2D;
-
 /**
  * Created by Dhande on 27-02-2017.
  */

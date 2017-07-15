@@ -6,9 +6,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.Image;
-import com.libGDX.engine.Base.Scene;
-import com.libGDX.engine.Debug.Debug;
+import com.libGDX.engine.Base.render.Image;
+import com.libGDX.engine.Base.gameComponents.Scene;
 
 import game.gameObjects.TestGameObject2;
 import game.gameObjects.TestObject;

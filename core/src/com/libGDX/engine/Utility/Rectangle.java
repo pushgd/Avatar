@@ -2,8 +2,7 @@ package com.libGDX.engine.Utility;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.Image;
-import com.libGDX.engine.Base.Vector2D;
+import com.libGDX.engine.Base.render.Image;
 
 /**
  * Created by Dhande on 28-04-2017.

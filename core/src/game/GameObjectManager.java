@@ -1,7 +1,7 @@
 package game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.GameObject;
+import com.libGDX.engine.Base.gameComponents.GameObject;
 
 import java.util.ArrayList;
 
