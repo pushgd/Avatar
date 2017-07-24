@@ -9,7 +9,7 @@ import com.libGDX.engine.Base.collision.Collision;
 
 public abstract class Entity implements com.libGDX.engine.Base.aniamtion.AnimationEventListener
 {
-
+//From BabyStep
     private static int baseId = 0;
 
     public int ID;
