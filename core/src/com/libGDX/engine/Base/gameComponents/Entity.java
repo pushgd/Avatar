@@ -1,6 +1,7 @@
 package com.libGDX.engine.Base.gameComponents;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.libGDX.engine.Base.collision.Collision;
 
 /**
  * Created by Dhande on 27-02-2017.
@@ -36,7 +37,7 @@ public abstract class Entity implements com.libGDX.engine.Base.aniamtion.Animati
 
     public abstract void paint(SpriteBatch spriteBatch);
 
-    public abstract void onCollision(collision.Collision collision, collision.Collision otherCollision);
+    public abstract void onCollision(Collision collision, Collision otherCollision);
 
 
 }
