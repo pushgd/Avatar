@@ -62,9 +62,9 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
         spriteBatch = new SpriteBatch();
         Gdx.input.setInputProcessor(this);
         GameManager.onGameStart();
-        tiledMap = new TmxMapLoader().load("test.tmx");
-        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap,spriteBatch);
-        tiledMap.getLayers().get(1).setVisible(true);
+//        tiledMap = new TmxMapLoader().load("test.tmx");
+//        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap,spriteBatch);
+//        tiledMap.getLayers().get(1).setVisible(true);
 
 
         // spriter
@@ -102,12 +102,12 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
 
 
         spriteBatch.setProjectionMatrix(camera.combined);
-        tiledMapRenderer.setView(camera);
+//        tiledMapRenderer.setView(camera);
 
         // spriter player update
         player.update();
 
-        tiledMapRenderer.render(new int[]{0});
+//        tiledMapRenderer.render(new int[]{0});
         renderer.begin();
         spriteBatch.begin();
 
@@ -123,7 +123,7 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
 
         renderer.end();
         spriteBatch.end();
-        tiledMapRenderer.render(new int[]{1});
+//        tiledMapRenderer.render(new int[]{1});
 
 
     }

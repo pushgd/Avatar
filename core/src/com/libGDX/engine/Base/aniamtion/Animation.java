@@ -32,5 +32,7 @@ public abstract class Animation
 
     public abstract float getHeight();
 
+    public abstract void deallocate();
+
 
 }

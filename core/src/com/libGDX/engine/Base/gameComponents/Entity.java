@@ -9,13 +9,17 @@ import com.libGDX.engine.Base.collision.Collision;
 
 public abstract class Entity implements com.libGDX.engine.Base.aniamtion.AnimationEventListener
 {
-//From BabyStep
+    //From BabyStep
     private static int baseId = 0;
+
 
     public int ID;
     public final int UID;
     public com.libGDX.engine.Utility.Vector2D position;
     public com.libGDX.engine.Utility.Vector2D velocity;
+
+    public boolean remove;
+
 
     public Entity()
     {
@@ -38,6 +42,8 @@ public abstract class Entity implements com.libGDX.engine.Base.aniamtion.Animati
     public abstract void paint(SpriteBatch spriteBatch);
 
     public abstract void onCollision(Collision collision, Collision otherCollision);
+
+    public abstract void deallocate();
 
 
 }

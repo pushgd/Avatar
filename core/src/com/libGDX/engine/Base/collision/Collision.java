@@ -13,7 +13,7 @@ import com.libGDX.engine.Utility.Rectangle;
 public class Collision
 {
     private static int baseID;
-    public final int ID;
+    public final int UID;
 
 
     public final Entity owner;
@@ -21,11 +21,14 @@ public class Collision
     public Rectangle worldRect;
     public Rectangle localRect;
     public Vector2D position;
-    public int type;
+    public int ID;
+    public boolean remove;
+
+
 
     public Collision(Entity owner, float localX, float localY, float width, float height)
     {
-        ID = baseID++;
+        UID = baseID++;
         this.owner = owner;
         position = new Vector2D(localX, localY);
         localRect = new Rectangle();
@@ -46,9 +49,9 @@ public class Collision
         return scale;
     }
 
-    private int getID()
+    private int getUID()
     {
-        return ID;
+        return UID;
     }
 
     public void update()
@@ -82,6 +85,6 @@ public class Collision
     @Override
     public String toString()
     {
-        return " collision {"+ID+" Owner "+owner.UID+" }";
+        return " collision {"+ UID +" Owner "+owner.UID+" }";
     }
 }

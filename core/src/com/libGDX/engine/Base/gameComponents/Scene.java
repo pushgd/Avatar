@@ -29,45 +29,44 @@ public abstract class Scene
     }
 
 
-    public boolean keyUp(int keycode)
+    public void keyUp(int keycode)
     {
-        return false;
+
     }
 
 
-    public boolean keyTyped(char character)
+    public void keyTyped(char character)
     {
-        return false;
+
     }
 
 
-    public boolean touchDown(int screenX, int screenY, int pointer, int button)
+    public void touchDown(int screenX, int screenY, int pointer, int button)
     {
-        return false;
+
     }
 
 
-    public boolean touchUp(int screenX, int screenY, int pointer, int button)
+    public void touchUp(int screenX, int screenY, int pointer, int button)
     {
-        return false;
     }
 
 
-    public boolean touchDragged(int screenX, int screenY, int pointer)
+    public void touchDragged(int screenX, int screenY, int pointer)
     {
-        return false;
+
     }
 
 
-    public boolean mouseMoved(int screenX, int screenY)
+    public void mouseMoved(int screenX, int screenY)
     {
-        return false;
+
     }
 
 
-    public boolean scrolled(int amount)
+    public void scrolled(int amount)
     {
-        return false;
+
     }
 
 

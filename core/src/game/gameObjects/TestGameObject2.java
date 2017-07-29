@@ -37,9 +37,15 @@ public class TestGameObject2 extends GameObject
     }
 
     @Override
-    public void onCollision(Collision collision,Collision otherCollision)
+    public void onCollision(Collision collision, Collision otherCollision)
     {
-        Debug.print( ""+otherCollision);
+
+    }
+
+    @Override
+    public void deallocate()
+    {
+
     }
 
     @Override

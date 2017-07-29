@@ -28,9 +28,9 @@ public class TestObject extends GameObject
         animation.setState(0, 1, true);
         position = new Vector2D(100, 100);
         collision = new Collision(this, 0, 0, 40, 40);
-        collision.type = 1;
+        collision.ID = 1;
         collision2 = new Collision(this, animation.getWidth() , animation.getHeight() / 2, 40, 40);
-        collision2.type = 2;
+        collision2.ID = 2;
         CollisionManager.addCollision(collision);
         CollisionManager.addCollision(collision2);
     }
@@ -58,6 +58,12 @@ public class TestObject extends GameObject
 
     @Override
     public void onCollision(Collision collision,Collision otherCollision)
+    {
+
+    }
+
+    @Override
+    public void deallocate()
     {
 
     }

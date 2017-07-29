@@ -119,4 +119,16 @@ public class SpriteAnimation extends Animation
     {
         return sprites.get(currentState)[currentFrame].getHeight();
     }
+
+    @Override
+    public void deallocate()
+    {
+        for (int i = 0; i < sprites.size(); i++)
+        {
+            for (int j = 0; j < sprites.get(i).length; j++)
+            {
+                sprites.get(i)[j].getTexture().dispose();
+            }
+        }
+    }
 }
