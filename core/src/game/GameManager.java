@@ -1,7 +1,7 @@
 package game;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.render.Image;
+import com.libGDX.engine.Base.render.Bitmap;
 import com.libGDX.engine.Base.gameComponents.Scene;
 
 
@@ -11,13 +11,15 @@ import com.libGDX.engine.Base.gameComponents.Scene;
 
 public class GameManager
 {
+    public static final int SCREEN_WIDTH = 1280;
+    public static final int SCREEN_HEIGHT = 720;
     public static Scene currentScene;
 
 
     public static void onGameStart()
     {
         CollisionManager.init();
-        Image.Debug.init();
+        Bitmap.Debug.init();
         currentScene = new game.scenes.SceneMenu();
     }
 
@@ -42,12 +44,9 @@ public class GameManager
             currentScene.update();
         }
         CollisionManager.detectCollision();
-//        Debug.print("Update");
+
     }
 
-    static int angle = 0;
-    static float scale = 1;
-    static int direction = 1;
 
     public static void paint(SpriteBatch spriteBatch)
     {
@@ -57,7 +56,6 @@ public class GameManager
         {
             currentScene.paint(spriteBatch);
         }
-//        Image.Debug.drawText(spriteBatch, "FPS " + Gdx.graphics.getFramesPerSecond(), 0, 480);
     }
 
 

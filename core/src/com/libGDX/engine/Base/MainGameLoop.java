@@ -35,14 +35,8 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     double lag = 0.0;
     public OrthographicCamera camera;
     Viewport viewport;
-    public TiledMap tiledMap;
-    public TiledMapRenderer tiledMapRenderer;
 
-    // spriter
-    Player player;
-    Drawer<Sprite> drawer;
-    LibGdxLoader loader;
-    ShapeRenderer renderer;
+
 
     @Override
     public void create()
@@ -53,29 +47,14 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
         camera.position.set(VIEWPORT_WIDTH / 2, VIEWPORT_HEIGHT / 2, 0);
         viewport = new FitViewport(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, camera);
 
-        // spriter
-        renderer = new ShapeRenderer();
-        renderer.setAutoShapeType(true);
-        renderer.setProjectionMatrix(camera.combined);
+
 
         camera.update();
         spriteBatch = new SpriteBatch();
         Gdx.input.setInputProcessor(this);
         GameManager.onGameStart();
-//        tiledMap = new TmxMapLoader().load("test.tmx");
-//        tiledMapRenderer = new OrthogonalTiledMapRenderer(tiledMap,spriteBatch);
-//        tiledMap.getLayers().get(1).setVisible(true);
 
 
-        // spriter
-        FileHandle handle = Gdx.files.internal("monster/basic_002.scml");
-        Data data = new SCMLReader(handle.read()).getData();
-        loader = new LibGdxLoader(data);
-        loader.load(handle.file());
-        drawer = new LibGdxDrawer(loader, spriteBatch, renderer);
-        player = new Player(data.getEntity(0));
-        player.setPosition(400,240);
-        player.flip(false,true);
 
 
     }
@@ -104,24 +83,15 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
         spriteBatch.setProjectionMatrix(camera.combined);
 //        tiledMapRenderer.setView(camera);
 
-        // spriter player update
-        player.update();
-
-//        tiledMapRenderer.render(new int[]{0});
-        renderer.begin();
         spriteBatch.begin();
-
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
 
 
 
         // spriter player draw
 
-        drawer.drawBoxes(player);
-        drawer.draw(player);
 
         GameManager.paint(spriteBatch);
-
-        renderer.end();
         spriteBatch.end();
 //        tiledMapRenderer.render(new int[]{1});
 
@@ -133,8 +103,7 @@ public class MainGameLoop extends ApplicationAdapter implements InputProcessor
     public void dispose()
     {
         spriteBatch.dispose();
-        renderer.dispose();
-        loader.dispose();
+
 
     }
 

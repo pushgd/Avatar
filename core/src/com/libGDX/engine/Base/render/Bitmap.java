@@ -12,7 +12,7 @@ import com.libGDX.engine.Utility.Utility;
  * Created by Dhande on 01-03-2017.
  */
 
-public class Image
+public class Bitmap
 {
 
 
@@ -20,19 +20,20 @@ public class Image
     private Sprite sprite;
 
 
-    public Image(String path)
+    public Bitmap(String path)
     {
         texture = new Texture(path);
         sprite = new Sprite(texture);
+        sprite.flip(false, true);
     }
 
-    public static void draw(SpriteBatch spriteBatch, Image r, float x, float y)
+    public static void draw(SpriteBatch spriteBatch, Bitmap r, float x, float y)
     {
         r.sprite.setPosition(x, y);
         r.sprite.draw(spriteBatch);
     }
 
-    public static void draw(SpriteBatch spriteBatch, Image r, float x, float y, float originX, float originY, float rotation, float scaleX, float scaleY)
+    public static void draw(SpriteBatch spriteBatch, Bitmap r, float x, float y, float originX, float originY, float rotation, float scaleX, float scaleY)
     {
 
 
@@ -55,9 +56,11 @@ public class Image
         return (int) (sprite.getHeight());
     }
 
+    public Texture getTexture(){return  texture;}
+
     public static class Debug
     {
-        public static Texture pixel = new Texture("pixel.png");
+        public static Texture pixel = new Texture("Debug/pixel.png");
         public static Sprite pixelSprite = new Sprite(pixel);
         public static BitmapFont bf = new BitmapFont(true);
         public static GlyphLayout gl = new GlyphLayout();

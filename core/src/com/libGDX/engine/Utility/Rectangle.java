@@ -2,7 +2,7 @@ package com.libGDX.engine.Utility;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.render.Image;
+import com.libGDX.engine.Base.render.Bitmap;
 
 /**
  * Created by Dhande on 28-04-2017.
@@ -33,13 +33,13 @@ public class Rectangle
 
     public void paint(SpriteBatch batch)
     {
-        Image.Debug.drawRect(batch, position.x, position.y, width, height);
-        Image.Debug.fillColor(batch, position.x, position.y, 5, 5, Color.BLUE);
+        Bitmap.Debug.drawRect(batch, position.x, position.y, width, height);
+        Bitmap.Debug.fillColor(batch, position.x, position.y, 5, 5, Color.BLUE);
     }
 
     public void paint(SpriteBatch batch, Color c)
     {
-        Image.Debug.drawRect(batch, position.x, position.y, width, height, c);
-        Image.Debug.fillColor(batch, position.x, position.y, 5, 5, c);
+        Bitmap.Debug.drawRect(batch, position.x, position.y, width, height, c);
+        Bitmap.Debug.fillColor(batch, position.x, position.y, 5, 5, c);
     }
 }

@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.libGDX.engine.Base.collision.Collision;
 import com.libGDX.engine.Base.gameComponents.GameObject;
 import com.libGDX.engine.Utility.Vector2D;
-import com.libGDX.engine.Debug.Debug;
 
 import game.CollisionManager;
 

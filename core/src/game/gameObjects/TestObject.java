@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.libGDX.engine.Base.aniamtion.SpriteAnimation;
 import com.libGDX.engine.Base.collision.Collision;
 import com.libGDX.engine.Base.gameComponents.GameObject;
-import com.libGDX.engine.Base.render.Image;
+import com.libGDX.engine.Base.render.Bitmap;
 import com.libGDX.engine.Utility.Vector2D;
 
 import game.CollisionManager;
@@ -51,7 +51,7 @@ public class TestObject extends GameObject
     public void paint(SpriteBatch spriteBatch)
     {
         animation.paint(spriteBatch, position.x, position.y);
-        Image.Debug.drawText(spriteBatch,position+"  "+animation.getHeight(),position.x,position.y);
+        Bitmap.Debug.drawText(spriteBatch,position+"  "+animation.getHeight(),position.x,position.y);
         collision.paint(spriteBatch);
         collision2.paint(spriteBatch, Color.PINK);
     }

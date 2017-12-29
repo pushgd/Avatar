@@ -2,7 +2,7 @@ package com.libGDX.engine.Base.collision;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.libGDX.engine.Base.gameComponents.Entity;
+import com.libGDX.engine.Base.gameComponents.GameObject;
 import com.libGDX.engine.Utility.Vector2D;
 import com.libGDX.engine.Utility.Rectangle;
 
@@ -16,7 +16,7 @@ public class Collision
     public final int UID;
 
 
-    public final Entity owner;
+    public final GameObject owner;
     private float scale;
     public Rectangle worldRect;
     public Rectangle localRect;
@@ -26,7 +26,7 @@ public class Collision
 
 
 
-    public Collision(Entity owner, float localX, float localY, float width, float height)
+    public Collision(GameObject owner, float localX, float localY, float width, float height)
     {
         UID = baseID++;
         this.owner = owner;
